@@ -746,14 +746,6 @@ design rules under a new name.</description>
 <element name="Y1" library="SparkFun-Clocks" package="CRYSTAL-SMD-5X3.2-4PAD" value="8MHz" x="14.9225" y="2.8575" smashed="yes" rot="R180">
 <attribute name="PROD_ID" value="XTAL-09431" x="14.9225" y="2.8575" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="C1" library="SparkFun-Capacitors" package="0603" value="10pF" x="11.1125" y="2.54" smashed="yes" rot="R270">
-<attribute name="PROD_ID" value="CAP-11812" x="11.1125" y="2.54" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="9.8425" y="3.302" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center"/>
-</element>
-<element name="C2" library="SparkFun-Capacitors" package="0603" value="10pF" x="18.7325" y="2.8575" smashed="yes" rot="R90">
-<attribute name="PROD_ID" value="CAP-11812" x="18.7325" y="2.8575" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="18.7325" y="1.143" size="0.6096" layer="25" font="vector" ratio="20" rot="R180" align="bottom-center"/>
-</element>
 <element name="C3" library="SparkFun-Capacitors" package="0603" value="10uF" x="15.5575" y="13.6525" smashed="yes">
 <attribute name="PROD_ID" value="CAP-11015" x="15.5575" y="13.6525" size="1.778" layer="27" display="off"/>
 <attribute name="NAME" x="15.5575" y="14.4145" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center"/>
@@ -782,9 +774,17 @@ design rules under a new name.</description>
 <attribute name="PROD_ID" value="CAP-00868" x="2.8575" y="12.065" size="1.778" layer="27" display="off"/>
 <attribute name="NAME" x="2.8575" y="12.827" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center"/>
 </element>
-<element name="FRAME1" library="SparkFun-Aesthetics" package="DUMMY" value="FRAME-A4L" x="-2.54" y="-3.81">
-<attribute name="VERSION" value="v01" x="-2.54" y="-3.81" size="1.778" layer="27" display="off"/>
-<attribute name="DESIGNER" value="Nobody" x="-2.54" y="-3.81" size="1.778" layer="27" display="off"/>
+<element name="FRAME1" library="SparkFun-Aesthetics" package="DUMMY" value="FRAME-A4L" x="0" y="0">
+<attribute name="VERSION" value="v01" x="0" y="0" size="1.778" layer="27" display="off"/>
+<attribute name="DESIGNER" value="Nobody" x="0" y="0" size="1.778" layer="27" display="off"/>
+</element>
+<element name="C1" library="SparkFun-Capacitors" package="0603" value="18pF" x="11.1125" y="2.54" smashed="yes" rot="R270">
+<attribute name="PROD_ID" value="CAP-08267" x="11.1125" y="2.54" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="NAME" x="9.8425" y="3.14325" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center"/>
+</element>
+<element name="C2" library="SparkFun-Capacitors" package="0603" value="18pF" x="18.7325" y="2.8575" smashed="yes" rot="R90">
+<attribute name="PROD_ID" value="CAP-08267" x="18.7325" y="2.8575" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="NAME" x="18.7325" y="1.143" size="0.6096" layer="25" font="vector" ratio="20" rot="R180" align="bottom-center"/>
 </element>
 </elements>
 <signals>
@@ -793,25 +793,27 @@ design rules under a new name.</description>
 </signal>
 <signal name="N$5">
 <contactref element="Y1" pad="3"/>
-<contactref element="C1" pad="2"/>
 <contactref element="U3" pad="6"/>
 <wire x1="13.0725" y1="1.7075" x2="14.9525" y2="1.7075" width="0.3048" layer="1"/>
 <wire x1="14.9525" y1="1.7075" x2="14.9525" y2="6.096" width="0.3048" layer="1"/>
 <wire x1="13.0725" y1="1.7075" x2="11.43" y2="1.7075" width="0.3048" layer="1"/>
 <wire x1="11.43" y1="1.7075" x2="11.1125" y2="1.69" width="0.3048" layer="1"/>
+<contactref element="C1" pad="2"/>
+<wire x1="11.1125" y1="1.69" x2="13.0175" y2="1.69" width="0.3048" layer="1"/>
+<wire x1="13.0175" y1="1.69" x2="13.0175" y2="1.74625" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$6">
 <contactref element="Y1" pad="1"/>
-<contactref element="C2" pad="2"/>
 <contactref element="U3" pad="7"/>
 <wire x1="16.7725" y1="4.0075" x2="15.6025" y2="4.0075" width="0.3048" layer="1"/>
 <wire x1="15.6025" y1="4.0075" x2="15.6025" y2="6.096" width="0.3048" layer="1"/>
 <wire x1="16.7725" y1="4.0075" x2="18.415" y2="4.0075" width="0.3048" layer="1"/>
 <wire x1="18.415" y1="4.0075" x2="18.7325" y2="3.7075" width="0.3048" layer="1"/>
+<contactref element="C2" pad="2"/>
+<wire x1="16.7725" y1="4.0075" x2="19.05" y2="4.0075" width="0.3048" layer="1"/>
+<wire x1="19.05" y1="4.0075" x2="19.05" y2="3.81" width="0.3048" layer="1"/>
 </signal>
 <signal name="GND">
-<contactref element="C1" pad="1"/>
-<contactref element="C2" pad="1"/>
 <polygon width="0.1524" layer="1">
 <vertex x="-1.27" y="21.59"/>
 <vertex x="25.4" y="21.59"/>
@@ -853,6 +855,8 @@ design rules under a new name.</description>
 <wire x1="8.5725" y1="6.0325" x2="8.89" y2="6.35" width="0.3048" layer="16"/>
 <contactref element="C5" pad="2"/>
 <contactref element="C4" pad="2"/>
+<contactref element="C1" pad="1"/>
+<contactref element="C2" pad="1"/>
 </signal>
 <signal name="3.3V">
 <contactref element="U2" pad="8"/>

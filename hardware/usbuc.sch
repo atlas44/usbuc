@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.5.0">
+<eagle version="8.6.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
+<setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
@@ -720,27 +721,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="10PF" prefix="C">
-<description>&lt;h3&gt;10pF ceramic capacitors&lt;/h3&gt;
-&lt;p&gt;A capacitor is a passive two-terminal electrical component used to store electrical energy temporarily in an electric field.&lt;/p&gt;</description>
-<gates>
-<gate name="G$1" symbol="CAP" x="0" y="0"/>
-</gates>
-<devices>
-<device name="-0603-50V-5%" package="0603">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="PROD_ID" value="CAP-11812"/>
-<attribute name="VALUE" value="10pF"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
 <deviceset name="10UF" prefix="C">
 <description>&lt;h3&gt;10.0µF ceramic capacitors&lt;/h3&gt;
 &lt;p&gt;A capacitor is a passive two-terminal electrical component used to store electrical energy temporarily in an electric field.&lt;/p&gt;</description>
@@ -862,6 +842,39 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <technology name="">
 <attribute name="PROD_ID" value="CAP-08064"/>
 <attribute name="VALUE" value="1.0uF"/>
+</technology>
+</technologies>
+</device>
+<device name="-0603-16V-10%-X7R" package="0603">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="CAP-13930"/>
+<attribute name="VALUE" value="1.0uF"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="18PF" prefix="C">
+<description>&lt;h3&gt;18pF ceramic capacitors&lt;/h3&gt;
+&lt;p&gt;A capacitor is a passive two-terminal electrical component used to store electrical energy temporarily in an electric field.&lt;/p&gt;</description>
+<gates>
+<gate name="G$1" symbol="CAP" x="0" y="0"/>
+</gates>
+<devices>
+<device name="-0603-50V-5%" package="0603">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="CAP-08267" constant="no"/>
+<attribute name="VALUE" value="18pF" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -2725,8 +2738,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </classes>
 <parts>
 <part name="Y1" library="SparkFun-Clocks" deviceset="CRYSTAL-8MHZ" device="SMD-5X3.2" value="8MHz"/>
-<part name="C1" library="SparkFun-Capacitors" deviceset="10PF" device="-0603-50V-5%" value="10pF"/>
-<part name="C2" library="SparkFun-Capacitors" deviceset="10PF" device="-0603-50V-5%" value="10pF"/>
 <part name="GND1" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
 <part name="SUPPLY2" library="SparkFun-PowerSymbols" deviceset="3.3V" device=""/>
 <part name="GND3" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
@@ -2752,6 +2763,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="SUPPLY5" library="SparkFun-PowerSymbols" deviceset="VIN" device=""/>
 <part name="SUPPLY6" library="SparkFun-PowerSymbols" deviceset="VIN" device=""/>
 <part name="FRAME1" library="SparkFun-Aesthetics" deviceset="FRAME-A4L" device=""/>
+<part name="C1" library="SparkFun-Capacitors" deviceset="18PF" device="-0603-50V-5%" value="18pF"/>
+<part name="C2" library="SparkFun-Capacitors" deviceset="18PF" device="-0603-50V-5%" value="18pF"/>
 </parts>
 <sheets>
 <sheet>
@@ -2762,19 +2775,14 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <text x="226.822" y="6.096" size="2.54" layer="94" font="vector">atlas</text>
 <text x="194.564" y="1.27" size="2.54" layer="94" font="vector">1/1</text>
 <text x="235.204" y="1.27" size="2.54" layer="94" font="vector">1.0</text>
+<text x="38.354" y="70.104" size="1.27" layer="96" align="top-left">ABM3B-
+8.000MHZ-
+10-1-U-T</text>
 </plain>
 <instances>
 <instance part="Y1" gate="G$1" x="38.1" y="76.2" smashed="yes" rot="R90">
 <attribute name="NAME" x="41.656" y="79.502" size="1.778" layer="95" font="vector" rot="R180" align="bottom-center"/>
 <attribute name="VALUE" x="42.164" y="71.882" size="1.778" layer="96" font="vector" rot="R180" align="top-center"/>
-</instance>
-<instance part="C1" gate="G$1" x="33.02" y="81.28" smashed="yes" rot="R90">
-<attribute name="NAME" x="33.528" y="85.471" size="1.778" layer="95" font="vector" rot="R180"/>
-<attribute name="VALUE" x="35.56" y="78.867" size="1.778" layer="96" font="vector" rot="R180"/>
-</instance>
-<instance part="C2" gate="G$1" x="33.02" y="71.12" smashed="yes" rot="R90">
-<attribute name="NAME" x="33.528" y="75.565" size="1.778" layer="95" font="vector" rot="R180"/>
-<attribute name="VALUE" x="35.306" y="68.199" size="1.778" layer="96" font="vector" rot="R180"/>
 </instance>
 <instance part="GND1" gate="1" x="25.4" y="66.04"/>
 <instance part="SUPPLY2" gate="G$1" x="76.2" y="142.24"/>
@@ -2825,6 +2833,14 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="SUPPLY5" gate="G$1" x="30.48" y="142.24"/>
 <instance part="SUPPLY6" gate="G$1" x="233.68" y="73.66"/>
 <instance part="FRAME1" gate="G$1" x="0" y="0" smashed="yes"/>
+<instance part="C1" gate="G$1" x="33.02" y="81.28" smashed="yes" rot="R90">
+<attribute name="NAME" x="33.528" y="85.471" size="1.778" layer="95" font="vector" rot="R180"/>
+<attribute name="VALUE" x="35.814" y="78.867" size="1.778" layer="96" font="vector" rot="R180"/>
+</instance>
+<instance part="C2" gate="G$1" x="33.02" y="71.12" smashed="yes" rot="R90">
+<attribute name="NAME" x="33.528" y="75.311" size="1.778" layer="95" font="vector" rot="R180"/>
+<attribute name="VALUE" x="35.56" y="68.453" size="1.778" layer="96" font="vector" rot="R180"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -2835,11 +2851,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="Y1" gate="G$1" pin="2"/>
 <wire x1="45.72" y1="81.28" x2="38.1" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="38.1" y1="81.28" x2="38.1" y2="78.74" width="0.1524" layer="91"/>
-<wire x1="38.1" y1="81.28" x2="35.56" y2="81.28" width="0.1524" layer="91"/>
-<pinref part="C1" gate="G$1" pin="2"/>
 <pinref part="U3" gate="A" pin="OSC1/CLKI/RPA2/RA2"/>
 <wire x1="58.42" y1="78.74" x2="45.72" y2="78.74" width="0.1524" layer="91"/>
 <junction x="38.1" y="81.28"/>
+<pinref part="C1" gate="G$1" pin="2"/>
+<wire x1="38.1" y1="81.28" x2="35.56" y2="81.28" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$6" class="0">
@@ -2848,20 +2864,16 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="Y1" gate="G$1" pin="1"/>
 <wire x1="45.72" y1="71.12" x2="38.1" y2="71.12" width="0.1524" layer="91"/>
 <wire x1="38.1" y1="71.12" x2="38.1" y2="73.66" width="0.1524" layer="91"/>
-<wire x1="38.1" y1="71.12" x2="35.56" y2="71.12" width="0.1524" layer="91"/>
-<pinref part="C2" gate="G$1" pin="2"/>
 <pinref part="U3" gate="A" pin="OSC2/CLKO/RPA3/PMA0/RA3"/>
 <wire x1="45.72" y1="76.2" x2="58.42" y2="76.2" width="0.1524" layer="91"/>
 <junction x="38.1" y="71.12"/>
+<pinref part="C2" gate="G$1" pin="2"/>
+<wire x1="38.1" y1="71.12" x2="35.56" y2="71.12" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="GND" class="0">
 <segment>
-<pinref part="C1" gate="G$1" pin="1"/>
-<wire x1="27.94" y1="81.28" x2="25.4" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="25.4" y1="81.28" x2="25.4" y2="71.12" width="0.1524" layer="91"/>
-<pinref part="C2" gate="G$1" pin="1"/>
-<wire x1="27.94" y1="71.12" x2="25.4" y2="71.12" width="0.1524" layer="91"/>
 <wire x1="25.4" y1="71.12" x2="25.4" y2="68.58" width="0.1524" layer="91"/>
 <pinref part="GND1" gate="1" pin="GND"/>
 <wire x1="25.4" y1="81.28" x2="25.4" y2="86.36" width="0.1524" layer="91"/>
@@ -2876,6 +2888,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <junction x="25.4" y="81.28"/>
 <junction x="25.4" y="71.12"/>
 <label x="2.54" y="93.98" size="1.778" layer="95"/>
+<pinref part="C1" gate="G$1" pin="1"/>
+<wire x1="27.94" y1="81.28" x2="25.4" y2="81.28" width="0.1524" layer="91"/>
+<pinref part="C2" gate="G$1" pin="1"/>
+<wire x1="27.94" y1="71.12" x2="25.4" y2="71.12" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="GND3" gate="1" pin="GND"/>
@@ -3171,4 +3187,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </sheets>
 </schematic>
 </drawing>
+<compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
+</compatibility>
 </eagle>
